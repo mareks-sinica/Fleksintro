@@ -1,8 +1,16 @@
+{% extends "layout.html" %}
+
+{% set active_page = 'contact' %}
+{% block saturs %}
 <!DOCTYPE html>
+<html>
   <head>
-    <title>Mana Lapa</title>
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
+  </head>
   <body>
-    <h1> This is contact page </h1>
-    <p> Call me : {{ phone }} </p>
+    <h1>This is my contact page</h1>
+    <p>Phone number: {{phone}}</p>
   </body>
 </html>
+{% endblock %}

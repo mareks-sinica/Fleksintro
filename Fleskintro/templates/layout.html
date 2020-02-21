@@ -1,21 +1,34 @@
 <!DOCTYPE html>
+<html>
   <head>
-    <title>Mana Lapa</title>
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
+  </head>
   <body>
     <header>
-      <div class="container">
+      <div class='container'>
         <nav>
-          <ul class="menu">
-            <li><a herf="/home">Home</a></li>
-            <li><a herf="/home">About</a></li>
-            <li><a herf="/home">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="container">
-      {% block saturs %}
-      {% endblock %}
+          <ul class='menu'>
+            <li {% if active_page == 'home' %}
+                  class="active"
+            {% endif %}><a href="/home">Home</a></li>
+            <li {% if active_page == 'about' %}
+                  class="active"
+            {% endif %}><a href="/about">About</a></li>
+            <li {% if active_page == 'contact' %}
+                  class="active"
+            {% endif %}><a href="/contact">Contact</a></li>
+            <li {% if active_page == 'params' %}
+                  class="active"
+            {% endif %}><a href="/params">Params</a></li>
+        </ul>
+      </nav>
+    </div>  
+  </header>
+  <div class = 'container'>
+  {% block saturs %}
+
+  {% endblock %}  
+  </div>
   </body>
-  </head>
 </html>
